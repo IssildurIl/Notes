@@ -3,10 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/-/AndroidStudioProjects/Notes/app/src/main/res/drawable/ic_delete.xml" value="0.162" />
         <entry key="..\:/Users/-/AndroidStudioProjects/Notes/app/src/main/res/layout/activity_main.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/-/AndroidStudioProjects/Notes/app/src/main/res/layout/custom_recyclerview_layout.xml" value="0.33" />
         <entry key="..\:/Users/-/AndroidStudioProjects/Notes/app/src/main/res/layout/fragment_add_task.xml" value="0.2421875" />
         <entry key="..\:/Users/-/AndroidStudioProjects/Notes/app/src/main/res/layout/fragment_task_list.xml" value="0.33" />
+        <entry key="..\:/Users/-/AndroidStudioProjects/Notes/app/src/main/res/layout/fragment_update_task.xml" value="0.34148550724637683" />
       </map>
     </option>
   </component>

@@ -10,8 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.learning.notes.R
-import com.learning.notes.models.Task
-import com.learning.notes.viewmodels.TaskViewModel
+import com.learning.notes.model.Task
+import com.learning.notes.viewmodel.TaskViewModel
 import kotlinx.android.synthetic.main.fragment_add_task.*
 import kotlinx.android.synthetic.main.fragment_add_task.view.*
 import java.util.*
@@ -40,12 +40,12 @@ class AddTask : Fragment() {
         val body = taskDescription.text.toString()
 
         if (inputCheck(header, body)) {
-            val task = Task(0,header,body,Date().time)
+            val task = Task(0, header, body, Date().time)
             taskViewModel.addTask(task)
-            Toast.makeText(requireContext(),"task added",Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(), "task added", Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.action_addTask_to_taskList)
-        }else{
-            Toast.makeText(requireContext(),"Please fill out all fields",Toast.LENGTH_LONG).show()
+        } else {
+            Toast.makeText(requireContext(), "Please fill out all fields", Toast.LENGTH_LONG).show()
         }
     }
 

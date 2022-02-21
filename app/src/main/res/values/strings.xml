@@ -5,4 +5,5 @@
     <string name="enter_task_name">Enter task name</string>
     <string name="enter_task_description">Enter task description</string>
     <string name="create_task">create task</string>
+    <string name="update_task">Update task</string>
 </resources>

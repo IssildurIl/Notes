@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_taskList_to_addTask"
             app:destination="@id/addTask" />
+        <action
+            android:id="@+id/action_taskList_to_updateTaskFragment"
+            app:destination="@id/updateTaskFragment" />
     </fragment>
     <fragment
         android:id="@+id/addTask"
@@ -22,5 +25,17 @@
         <action
             android:id="@+id/action_addTask_to_taskList"
             app:destination="@id/taskList" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateTaskFragment"
+        android:name="com.learning.notes.fragments.update.UpdateTaskFragment"
+        android:label="fragment_update_task"
+        tools:layout="@layout/fragment_update_task" >
+        <action
+            android:id="@+id/action_updateTaskFragment_to_taskList"
+            app:destination="@id/taskList" />
+        <argument
+            android:name="currentTask"
+            app:argType="com.learning.notes.model.Task" />
     </fragment>
 </navigation>

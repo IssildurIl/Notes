@@ -1,14 +1,13 @@
-package com.learning.notes.viewmodels
+package com.learning.notes.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import com.learning.notes.models.Task
-import com.learning.notes.room.TaskDatabase
-import com.learning.notes.room.repository.TaskRepository
+import com.learning.notes.model.Task
+import com.learning.notes.data.TaskDatabase
+import com.learning.notes.data.repository.TaskRepository
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.launch
 
 class TaskViewModel(application: Application):AndroidViewModel(application) {
@@ -25,6 +24,18 @@ class TaskViewModel(application: Application):AndroidViewModel(application) {
     fun addTask(task: Task){
         viewModelScope.launch(Dispatchers.IO) {
             taskRepository.addTask(task)
+        }
+    }
+
+    fun updateTask(task: Task){
+        viewModelScope.launch(Dispatchers.IO) {
+            taskRepository.updateTask(task)
+        }
+    }
+
+    fun deleteTask(task: Task){
+        viewModelScope.launch(Dispatchers.IO) {
+            taskRepository.deleteTask(task)
         }
     }
 }
