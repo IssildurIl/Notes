@@ -6,4 +6,8 @@
     <string name="enter_task_description">Enter task description</string>
     <string name="create_task">create task</string>
     <string name="update_task">Update task</string>
+    <string name="notes">Все заметки</string>
+    <string name="deleted_task">Удаленные задачи</string>
+    <string name="archived_task">Выполненные задачи</string>
+    <string name="search">Search</string>
 </resources>
