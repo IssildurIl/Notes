@@ -13,6 +13,9 @@ class TaskViewHolder(private val binding: CustomRecyclerviewLayoutBinding, itemL
             itemListener.onClick(adapterPosition)
         }
 
+        binding.isActive.setOnCheckedChangeListener { _, isChecked ->
+            itemListener.onItemCheckedChange(adapterPosition, isChecked)
+        }
     }
 
     fun bind(task: Task) {

@@ -54,10 +54,10 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui-ktx:2.4.1'
 
     // Room components
-    implementation "androidx.room:room-runtime:2.4.1"
-    implementation "androidx.room:room-ktx:2.4.1"
-    kapt "androidx.room:room-compiler:2.4.1"
-    androidTestImplementation "androidx.room:room-testing:2.4.1"
+    implementation "androidx.room:room-runtime:2.4.2"
+    implementation "androidx.room:room-ktx:2.4.2"
+    kapt "androidx.room:room-compiler:2.4.2"
+    androidTestImplementation "androidx.room:room-testing:2.4.2"
 
     // Lifecycle components
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
@@ -70,5 +70,9 @@ dependencies {
     api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2"
 
     implementation 'it.xabaras.android:recyclerview-swipedecorator:1.2.3'
+
+    //Dagger
+    implementation "com.google.dagger:dagger:2.40.3"
+    kapt "com.google.dagger:dagger-compiler:2.40.3"
 
 }

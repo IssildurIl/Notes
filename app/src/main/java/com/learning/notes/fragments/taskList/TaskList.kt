@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.learning.notes.R
+import com.learning.notes.model.enums.TaskStatus
 import com.learning.notes.recyclerview.ItemListener
 import com.learning.notes.recyclerview.TaskListAdapter
 import com.learning.notes.utils.SwipeGesture
@@ -54,7 +55,6 @@ class TaskList : Fragment(), ItemListener {
         view.fab.setOnClickListener {
             findNavController().navigate(R.id.action_taskList_to_addTask)
         }
-
     }
 
     private fun swipeLogic(adapter: TaskListAdapter, recyclerView: RecyclerView) {
@@ -70,7 +70,6 @@ class TaskList : Fragment(), ItemListener {
                 }
             }
         }
-
         val touchHelper = ItemTouchHelper(swipeGesture)
         touchHelper.attachToRecyclerView(recyclerView)
     }
@@ -79,6 +78,15 @@ class TaskList : Fragment(), ItemListener {
         adapter?.currentList?.get(position)?.let { value ->
             val action = TaskListDirections.actionTaskListToUpdateTaskFragment(value)
             findNavController().navigate(action)
+        }
+    }
+
+    override fun onItemCheckedChange(position: Int, checked: Boolean) {
+        adapter?.currentList?.get(position)?.let {
+            when (it.status) {
+                TaskStatus.ACTIVE -> it.status = TaskStatus.ARCHIVED
+                TaskStatus.ARCHIVED -> it.status = TaskStatus.ACTIVE
+            }
         }
     }
 }

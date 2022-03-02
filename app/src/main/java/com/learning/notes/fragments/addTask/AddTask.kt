@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.learning.notes.R
 import com.learning.notes.model.Task
+import com.learning.notes.model.enums.TaskStatus
 import com.learning.notes.viewmodel.TaskViewModel
 import kotlinx.android.synthetic.main.fragment_add_task.*
 import kotlinx.android.synthetic.main.fragment_add_task.view.*
@@ -31,7 +32,6 @@ class AddTask : Fragment() {
         view.addBtn.setOnClickListener {
             insertDataToDB()
         }
-
         return view
     }
 
@@ -40,7 +40,7 @@ class AddTask : Fragment() {
         val body = taskDescription.text.toString()
 
         if (inputCheck(header, body)) {
-            val task = Task(0, header, body, Date().time)
+            val task = Task(0, header, body, Date().time, status = TaskStatus.ACTIVE)
             taskViewModel.addTask(task)
             Toast.makeText(requireContext(), "task added", Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.action_addTask_to_taskList)

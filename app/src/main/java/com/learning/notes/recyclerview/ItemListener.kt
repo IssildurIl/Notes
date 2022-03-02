@@ -4,4 +4,5 @@ interface ItemListener {
 
     fun onClick(position: Int)
 
+    fun onItemCheckedChange(position: Int, checked: Boolean)
 }

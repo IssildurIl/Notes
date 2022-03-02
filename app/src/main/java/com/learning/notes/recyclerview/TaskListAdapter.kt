@@ -32,39 +32,4 @@ class TaskListAdapter(private val itemListener: ItemListener) : ListAdapter<Task
         }
     }
 
-    //    private var taskList = emptyList<Task>().toMutableList()
-//
-//    class RecyclerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
-//
-//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewHolder {
-//        return RecyclerViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.custom_recyclerview_layout, parent, false))
-//    }
-//
-//    override fun onBindViewHolder(holder: RecyclerViewHolder, position: Int) {
-//        val currentItem = taskList[position]
-//        holder.itemView.ll.header.text = currentItem.header
-//        holder.itemView.ll.body.text = currentItem.body
-//
-//        holder.itemView.rowLayout.setOnClickListener {
-//            val action = TaskListDirections.actionTaskListToUpdateTaskFragment(currentItem)
-//            holder.itemView.findNavController().navigate(action)
-//        }
-//    }
-//
-//    @SuppressLint("NotifyDataSetChanged")
-//    fun deleteItem(position: Int){
-//        taskList.removeAt(position)
-//        notifyDataSetChanged()
-//    }
-//
-//    override fun getItemCount(): Int {
-//        return taskList.size
-//    }
-//
-//    @SuppressLint("NotifyDataSetChanged")
-//    fun setData(taskList: List<Task>) {
-//        this.taskList = taskList.toMutableList()
-//        notifyDataSetChanged()
-//    }
-
 }

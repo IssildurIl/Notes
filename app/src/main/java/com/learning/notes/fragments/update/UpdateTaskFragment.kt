@@ -61,7 +61,7 @@ class UpdateTaskFragment : Fragment() {
     private fun updateTask(view: View) {
         val header = view.updTaskHeader.text.toString()
         val body = view.updTaskDescription.text.toString()
-        val task = Task(id = args.currentTask.id, header = header, body = body, timestamp = Date().time)
+        val task = Task(id = args.currentTask.id, header = header, body = body, timestamp = Date().time, status = args.currentTask.status)
         if (inputCheck(header, body)) {
             taskViewModel.updateTask(task)
         }

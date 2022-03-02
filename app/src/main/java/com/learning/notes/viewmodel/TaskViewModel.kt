@@ -13,12 +13,16 @@ import kotlinx.coroutines.launch
 class TaskViewModel(application: Application):AndroidViewModel(application) {
 
     val readAllData:LiveData<List<Task>>
+    val readActive: LiveData<List<Task>>
+    val readArchived: LiveData<List<Task>>
     private val taskRepository: TaskRepository
 
     init {
         val taskDao = TaskDatabase.getDatabase(application).taskDao()
         taskRepository = TaskRepository(taskDao)
         readAllData = taskRepository.readAllTasks
+        readActive = taskRepository.activeTasks
+        readArchived = taskRepository.archivedTasks
     }
 
     fun addTask(task: Task){
