@@ -16,6 +16,13 @@ data class Task(
     val timestamp: Long,
     var status: TaskStatus
 ) : Parcelable {
+
+    fun isActive():Boolean{
+        return when (status){
+            TaskStatus.ACTIVE-> false
+            TaskStatus.ARCHIVED-> true
+        }
+    }
 }
 
 

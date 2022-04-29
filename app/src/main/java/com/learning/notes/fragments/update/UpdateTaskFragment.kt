@@ -21,10 +21,6 @@ class UpdateTaskFragment : Fragment() {
 
     private lateinit var taskViewModel: TaskViewModel
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -46,9 +42,10 @@ class UpdateTaskFragment : Fragment() {
                 updateTask(view)
             }
             findNavController().navigate(R.id.action_updateTaskFragment_to_taskList)
+            //возврат по фрагменту
+        //fragmentManager?.popBackStack()
         }
     }
-
 
     private fun checkChanges(header: String, body: String, view: View): Boolean {
         return (header == view.updTaskHeader.text.toString() && body == view.updTaskDescription.text.toString())
@@ -66,4 +63,5 @@ class UpdateTaskFragment : Fragment() {
             taskViewModel.updateTask(task)
         }
     }
+
 }

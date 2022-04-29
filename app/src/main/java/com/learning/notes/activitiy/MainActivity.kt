@@ -1,4 +1,4 @@
-package com.learning.notes
+package com.learning.notes.activitiy
 
 import android.os.Bundle
 import android.view.View
@@ -11,12 +11,14 @@ import androidx.navigation.navOptions
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.learning.notes.R
 import com.learning.notes.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
+
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
@@ -38,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         var fragmentIdToLoad: Int? = null
+
         binding.NavigationView.setNavigationItemSelectedListener { item ->
             fragmentIdToLoad = item.itemId
             binding.DrawerLayout.closeDrawer(GravityCompat.START, true)
@@ -66,6 +69,12 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })
+
+        navController.addOnDestinationChangedListener { controller, destination, arguments ->
+            fragmentIdToLoad = destination.id
+            binding.NavigationView.setCheckedItem(destination.id)
+        }
     }
+
 
 }

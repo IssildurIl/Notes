@@ -3,6 +3,7 @@ package com.learning.notes.recyclerview.viewholders
 import androidx.recyclerview.widget.RecyclerView
 import com.learning.notes.databinding.CustomRecyclerviewLayoutBinding
 import com.learning.notes.model.Task
+import com.learning.notes.model.enums.TaskStatus
 import com.learning.notes.recyclerview.ItemListener
 
 class TaskViewHolder(private val binding: CustomRecyclerviewLayoutBinding, itemListener: ItemListener) :
@@ -21,5 +22,6 @@ class TaskViewHolder(private val binding: CustomRecyclerviewLayoutBinding, itemL
     fun bind(task: Task) {
         binding.body.text = task.body
         binding.header.text = task.header
+        binding.isActive.isChecked = task.isActive()
     }
 }

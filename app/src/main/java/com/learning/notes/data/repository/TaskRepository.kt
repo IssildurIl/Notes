@@ -8,8 +8,8 @@ import com.learning.notes.model.enums.TaskStatus
 class TaskRepository(private val taskDao: TaskDao) {
 
     val readAllTasks:LiveData<List<Task>> = taskDao.getAllTasks()
-    val activeTasks:LiveData<List<Task>> = taskDao.getTasksByStatus(TaskStatus.ARCHIVED)
-    val archivedTasks:LiveData<List<Task>> = taskDao.getTasksByStatus(TaskStatus.ACTIVE)
+    val archivedTasks:LiveData<List<Task>> = taskDao.getTasksByStatus(TaskStatus.ARCHIVED)
+    val activeTasks:LiveData<List<Task>> = taskDao.getTasksByStatus(TaskStatus.ACTIVE)
 
     suspend fun addTask(task: Task){
         taskDao.addTask(task)

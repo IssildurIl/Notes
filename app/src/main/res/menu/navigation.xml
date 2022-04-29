@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
 
     <group
         android:id="@+id/GroupOne"
@@ -15,11 +17,6 @@
     <group
         android:id="@+id/GroupTwo"
         android:checkableBehavior="single">
-
-        <item
-            android:id="@+id/Deleted"
-            android:icon="@drawable/ic_delete"
-            android:title="@string/deleted_task" />
 
         <item
             android:id="@+id/Archived"

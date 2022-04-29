@@ -1,13 +1,14 @@
 package com.learning.notes.data
 
 import android.content.Context
+import androidx.room.AutoMigration
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.learning.notes.model.Task
 import com.learning.notes.data.dao.TaskDao
 
-@Database(entities = [Task::class], version = 2, exportSchema = false)
+@Database(entities = [Task::class], version = 3, autoMigrations = [AutoMigration (from = 2, to = 3)],  exportSchema = true)
 abstract class TaskDatabase : RoomDatabase() {
 
     abstract fun taskDao(): TaskDao
