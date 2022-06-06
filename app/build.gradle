@@ -80,5 +80,8 @@ dependencies {
     implementation "com.google.dagger:dagger:2.40.3"
     kapt "com.google.dagger:dagger-compiler:2.40.3"
 
+    //Cicerone
+    implementation 'ru.terrakok.cicerone:cicerone:1.0'
+
 
 }
